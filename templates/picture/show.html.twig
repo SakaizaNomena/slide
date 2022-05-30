@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Insert image
+{% endblock %}
+
+{% block body %}
+
+	{# <pre>
+		    {{ dump(data) }}
+		</pre> #}
+	<div id="slider">
+		<ul class="slides">
+			{% for item in data %}
+				<li class="slide">
+
+					{{ item.name }}
+					<img src="{{asset('/picture/')}}{{item.image}}" alt="" class=""/>
+
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% block javascript %}
+		<script>
+			$(function () {
+			setInterval(function () {
+			$('#slider .slides').animate({'margin-left': '-=7200px'}, 1000);
+			}, 3000);
+			})
+		</script>
+	{% endblock %}
+
+
+{% endblock %}

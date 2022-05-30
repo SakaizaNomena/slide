@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    {% for content in data %}
+        {{ content.titre }}
+        {{ content.contenue }}
+        <img src="{{ content.image }}" alt="" />
+    {% endfor %}
+{% endblock %}
